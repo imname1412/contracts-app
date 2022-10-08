@@ -4,8 +4,13 @@ pragma solidity ^0.7.6;
 //Vulnerability solidity version < 0.8.0
 
 contract StakeLab {
+    uint unlockTime;
     mapping(address => uint) public balance;
     mapping(address => uint) public lockTime;
+
+    constructor(uint _unlockTime) {
+        unlockTime = _unlockTime;
+    }
 
     modifier isQualify() {
         require(balance[msg.sender] > 0, "Insufficient funds");
@@ -15,7 +20,7 @@ contract StakeLab {
 
     function deposit() external payable {
         balance[msg.sender] += msg.value;
-        lockTime[msg.sender] = block.timestamp + 1 weeks;
+        lockTime[msg.sender] = block.timestamp + unlockTime;
     }
 
     function increaseLockTime(uint _secondsToIncrease) external {
