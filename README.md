@@ -6,12 +6,14 @@ that used hardhat to develop
 npx hardhat help
 npx hardhat test test/testfile.js
 npx hardhat node
-npx hardhat run scripts/deploy.js --network [Network]
+npx hardhat run scripts/deploy.js --network goerli
 ```
 
-##### Application with testing
+##### Application
 - Basic
+- ERC20
 - Escrow - **ERC721**
 - Reentrancy
 - Overflow
 - Multisig wallet
+- Oracle

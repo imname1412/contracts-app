@@ -1,7 +1,14 @@
 require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config();
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
+  // networks: {
+  //   goerli: {
+  //     url: process.env.INFURA_NODE_ENDPOINT,
+  //     accounts: [process.env.WALLET_PRIVATE_KEY]
+  //   }
+  // },
   solidity: {
     compilers: [
       {
@@ -12,5 +19,11 @@ module.exports = {
         settings: {},
       },
     ],
+  },
+  paths: {
+    sources: "./contracts",
+    tests: "./test",
+    cache: "./cache",
+    artifacts: "./artifacts"
   },
 };
