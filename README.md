@@ -13,6 +13,7 @@ npx hardhat run scripts/deploy.js --network goerli
 - Basic
 - ERC20
 - Escrow - **ERC721**
+- Flash Loan
 - Reentrancy
 - Overflow
 - Multisig wallet
